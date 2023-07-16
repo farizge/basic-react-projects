@@ -4,6 +4,7 @@ import Menu from "./Menu";
 
 const App = () => {
     const [menuData, setMenuData] = useState(items);
+    const categories = new Set(["all", ...items.map((item) => item.category)]);
 
     return (
         <main>
