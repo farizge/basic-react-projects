@@ -16,7 +16,7 @@ function SingleQustion({ id, title, info, activeId, toggleQuestion }) {
                     {isActive ? <FaChevronUp /> : <FaChevronDown />}
                 </button>
             </header>
-            <p>{isActive && info}</p>
+            {isActive && <p>{info}</p>}
         </div>
     );
 }
