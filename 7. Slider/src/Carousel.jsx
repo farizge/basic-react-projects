@@ -21,7 +21,7 @@ function Carousel() {
     useEffect(() => {
         let slides = setInterval(() => {
             nextSlide();
-        }, 3000);
+        }, 4000);
         return () => clearInterval(slides);
     }, [currentPerson]);
 
