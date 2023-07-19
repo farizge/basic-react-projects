@@ -357,3 +357,28 @@ ul {
 .next-slide {
     transform: translateX(100%);
 }
+
+/* =============SLICK CAROUSEL====================== */
+
+.slick-container {
+    background-color: var(--primary-200);
+    margin: 0 auto;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 80vw;
+    max-width: 800px;
+    border-radius: 20px;
+    text-align: center;
+}
+.slick-slide img {
+    display: inline-block;
+}
+
+.slick-prev::before {
+    color: var(--primary-300);
+}
+.slick-next::before {
+    color: var(--primary-300);
+}
