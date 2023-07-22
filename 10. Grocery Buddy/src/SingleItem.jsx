@@ -1,14 +1,19 @@
 import React from "react";
 
-function SingleItem({ id, item, isComplete, removeItem }) {
+function SingleItem({ item, removeItem, editItem }) {
     return (
         <div className="single-item">
-            <input type="checkbox" value={isComplete} />
-            <p>{item}</p>
+            <input
+                type="checkbox"
+                checked={item.isComplete}
+                onChange={() => editItem(item.id)}
+            />
+            <p style={{ textDecoration: item.isComplete && "line-through" }}>
+                {item.name}
+            </p>
             <button
                 className="btn remove-btn"
-                value={id}
-                onClick={() => removeItem(id)}
+                onClick={() => removeItem(item.id)}
             >
                 Remove
             </button>

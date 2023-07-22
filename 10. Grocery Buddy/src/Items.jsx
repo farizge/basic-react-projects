@@ -1,17 +1,16 @@
 import React from "react";
 import SingleItem from "./SingleItem";
 
-function Items({ items, removeItem }) {
+function Items({ items, removeItem, editItem }) {
     return (
         <div className="items">
             {items.map((item) => {
                 return (
                     <SingleItem
                         key={item.id}
-                        id={item.id}
-                        item={item.name}
-                        isComplete={item.isComplete}
+                        item={item}
                         removeItem={removeItem}
+                        editItem={editItem}
                     />
                 );
             })}

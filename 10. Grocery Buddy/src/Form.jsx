@@ -4,13 +4,14 @@ import { toast } from "react-toastify";
 
 function Form({ addItem }) {
     const [inputItem, setInputItem] = useState("");
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (inputItem === "") {
+        if (!inputItem) {
             toast.error("Please provide valid input");
         } else {
             addItem(inputItem);
-            toast.success("Item Added");
+            setInputItem("");
         }
     };
     return (
@@ -20,6 +21,7 @@ function Form({ addItem }) {
                 <input
                     type="text"
                     className="form-input"
+                    value={inputItem}
                     onChange={(e) => setInputItem(e.target.value)}
                     autoFocus
                 />
