@@ -30,10 +30,9 @@ const App = () => {
 
     const editItem = (id) => {
         let newItems = items.map((item) => {
-            if (item.id === id) {
-                return { ...item, isComplete: !item.isComplete };
-            }
-            return item;
+            return item.id === id
+                ? { ...item, isComplete: !item.isComplete }
+                : item;
         });
         setItems(newItems);
         setLocalStorage(newItems);
