@@ -322,3 +322,76 @@ main {
     cursor: pointer;
     color: var(--red-dark);
 }
+
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1rem;
+    box-shadow: var(--red-dark);
+    transition: var(--transition);
+    /* toggle logic */
+    transform: translateX(-100%);
+}
+.show-sidebar {
+    transform: translateX(0);
+    box-shadow: var(--shadow-3);
+}
+
+@media screen and (min-width: 676px) {
+    .sidebar-container {
+        width: 400px;
+    }
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.logo {
+    height: 40px;
+}
+
+.sidebar-close-btn {
+    font-size: 1.5rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.links a {
+    display: flex;
+    gap: 1rem;
+    text-transform: uppercase;
+    margin-left: 1rem;
+    padding: 1rem 1.5rem;
+    color: var(--primary-500);
+    transition: var(--transition);
+    width: 90%;
+}
+
+.links a:hover {
+    background: var(--primary-100);
+    transform: translateX(2%);
+    border-left: 3px solid var(--primary-500);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    justify-self: center;
+}
+
+.social-links a {
+    color: var(--primary-500);
+    font-size: 1.25rem;
+}
